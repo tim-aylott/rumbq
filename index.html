@@ -350,11 +350,11 @@ for(let i=0;i<30;i++){
 }
 
 // top four
-const top = document.getElementById('top');
+const topEl = document.getElementById('top');
 const winner = sorted[0], second = sorted[1];
 const thirds = sorted.filter(r=>r.pos===3);
 const gap = winner.total - second.total;
-top.insertAdjacentHTML('beforeend',
+topEl.insertAdjacentHTML('beforeend',
  `<div class="card first">
     <span class="ribbon">1st: The Chosen One</span>
     <h3>${winner.name}</h3>
@@ -362,7 +362,7 @@ top.insertAdjacentHTML('beforeend',
     <p>Brought by the Aylotts. Average ${winner.avg.toFixed(2)} per taster, and ${fmt(gap)} points clear of the nearest rival.</p>
     <span class="joke marker">${winner.epitaph}</span>
   </div>`);
-top.insertAdjacentHTML('beforeend',
+topEl.insertAdjacentHTML('beforeend',
  `<div class="card second">
     <span class="ribbon">2nd: The Bridesmaid</span>
     <h3>${second.name}</h3>
@@ -371,7 +371,7 @@ top.insertAdjacentHTML('beforeend',
     <span class="joke marker">${second.epitaph}</span>
   </div>`);
 thirds.forEach(r=>{
-  top.insertAdjacentHTML('beforeend',
+  topEl.insertAdjacentHTML('beforeend',
    `<div class="card third">
       <span class="ribbon">Joint 3rd: Still Standing</span>
       <h3>${r.name}</h3>
